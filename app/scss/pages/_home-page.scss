@@ -259,12 +259,17 @@
 				zoom: 1;
 				line-height: 1;
 				color: #026bb7;
-
 				@include breakpoint(pc){
 					font-size: 37px;
 					position: absolute; 
 					right: -17px;
 					top: 70px;
+				}
+				@include breakpoint(md){
+					font-size: 32px;
+				}
+				@include breakpoint(tablet){
+					font-size: 28px;
 				}
 				@include breakpoint(sp){
 					text-align: center;
@@ -273,7 +278,7 @@
 					@include converter-sp(font-size, 46);
 				}
 				span {
-					@include breakpoint(sp){
+					@include breakpoint(pc){
 						font-size: 16px;
 					}
 					@include breakpoint(sp){
