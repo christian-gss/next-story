@@ -172,7 +172,7 @@
 			font-size: 52px;
 		}
 		@include breakpoint(sp) {
-			@include converter-sp(font-size, 55);
+			@include converter-sp(font-size, 46);
 		}
 	}
 	&__wrapper {
