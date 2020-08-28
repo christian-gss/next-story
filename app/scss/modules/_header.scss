@@ -23,8 +23,50 @@
     }
     &__contact {
         @include breakpoint(sp) {
-            width: 80%;
+            width: 100%;
             @include converter-sp(margin, 10, 0, 0);
+        }
+        p {
+            @include breakpoint(pc) {
+                font-size: 18px;
+            }
+            @include breakpoint(sp) {
+                @include converter-sp(font-size, 26);
+            }
+        }
+        img {
+            @include breakpoint(pc) {
+                margin-right: 5px;
+            }
+            @include breakpoint(sp) {
+                @include converter-sp(margin, 0, 5, 0, 0);
+                @include converter-sp(width, 40);
+            }
+        }
+        div {
+            display: flex;
+            align-items: center;
+        }
+        span {
+            font-weight: 800;
+            color: #ff9b00;
+            @include breakpoint(pc) {
+                font-size: 46px;
+            }
+            @include breakpoint(sp) {
+                width: 100%;
+                @include converter-sp(font-size, 46);
+            }
+            span {
+                @include breakpoint(pc) {
+                    font-size: 16px;
+                }
+                @include breakpoint(sp) {
+                    width: 100%;
+                    @include converter-sp(font-size, 24);
+                }
+            }
+
         }
     }
     .logo {

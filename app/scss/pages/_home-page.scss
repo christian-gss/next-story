@@ -247,6 +247,70 @@
 				justify-self: center;
 			}
 		}
+		p {
+			&:first-of-type {
+				font-weight: 800;
+				text-shadow:
+				-1px -1px 0 #ffffff,  
+				1px -1px 0 #ffffff,
+				-1px 1px 0 #ffffff,
+				1px 1px 0 #ffffff;
+				filter: progid:DXImageTransform.Microsoft.Chroma(color='white') progid:DXImageTransform.Microsoft.Alpha(opacity=100) progid:DXImageTransform.Microsoft.dropshadow(color=#ffffff,offX=1,offY=1) progid:DXImageTransform.Microsoft.dropshadow(color=#ffffff,offX=-1,offY=1) progid:DXImageTransform.Microsoft.dropshadow(color=#ffffff,offX=1,offY=-1) progid:DXImageTransform.Microsoft.dropshadow(color=#ffffff,offX=-1,offY=-1);
+				zoom: 1;
+				line-height: 1;
+				color: #026bb7;
+
+				@include breakpoint(pc){
+					font-size: 37px;
+					position: absolute; 
+					right: -17px;
+					top: 70px;
+				}
+				@include breakpoint(sp){
+					text-align: center;
+					position: relative;
+					@include converter-sp(margin, 10, 0, 0);
+					@include converter-sp(font-size, 46);
+				}
+				span {
+					@include breakpoint(sp){
+						font-size: 16px;
+					}
+					@include breakpoint(sp){
+						@include converter-sp(font-size, 24);
+					}
+				}
+			}
+			&:last-of-type { 
+				font-weight: 600;
+				@include breakpoint(pc){
+					position: absolute;
+					font-size: 18px;
+					right: 25px;
+					top: 120px;
+				}
+				@include breakpoint(sp){
+					text-align: center;
+					position: relative;
+					@include converter-sp(margin, 10, 0, 0);
+					@include converter-sp(font-size, 24);
+				}
+			}
+		}
+		&Tel {
+			img {
+				@include breakpoint(pc){
+					position: absolute;
+					top: 13px;
+					left: 50%;
+					-webkit-transform: translateX(-50%);
+					transform: translateX(-50%);
+				}
+				@include breakpoint(sp){
+					position: relative;
+				}
+			}
+		}
 	}
 }
 .reason {
