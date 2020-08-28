@@ -1,40 +1,49 @@
 .d {
 	&__flex {
-		display: flex;
+		@include breakpoint(pc) {
+			display: flex;
+		}
 		&--vertical {
 			&Center {
-				align-items: center;
+				@include breakpoint(pc) {
+					align-items: center;
+				}
 			}
 		}
 		&--justify {
 			&SpaceBetween {
-				justify-content: space-between;
+				@include breakpoint(pc) {
+					justify-content: space-between;
+				}
 			}
 			&SpaceAround {
-				justify-content: space-around;
+				@include breakpoint(pc) {
+					justify-content: space-around;
+				}
 			}
 			&Center {
-				justify-content: center;
+				@include breakpoint(pc) {
+					justify-content: center;
+				}
 			}
 		}
 		&Flow {
 			&Col {
-				flex-flow: column;
+				@include breakpoint(pc) {
+					flex-flow: column;
+				}
 			}
 		}
 	} 
 }
 
 .green {
-	font-size: 62px;
 	color: #01c48b;
 }
 .blue {
-	font-size: 62px;
 	color: #026bb7;
 }
 .orange {
-	font-size: 62px;
 	color: #ffb861;
 }
 
@@ -44,13 +53,18 @@
 		background-image: url(../images/kv.png);
 		background-repeat: no-repeat;
 		background-position: top center;
-		height: 657px;
 		width: 100%;
 		@include breakpoint(pc) {
+			height: 657px;
 			background-size: cover;
 		}
 		@include breakpoint(pc-lg) {
+			height: 657px;
 			background-size: contain;
+		}
+		@include breakpoint(sp) {
+			background-size: cover;
+			@include converter-sp(height, 400);
 		}
 	}
     &__bg {
@@ -65,23 +79,51 @@
 			background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(183,244,253,1) 100%);
 			z-index: -1;
         }
-    }
+	}
+	&__buttons {
+		@include converter-sp(margin, 20, 0, 0);
+		a {
+			@include breakpoint(sp) {
+				@include converter-sp(margin, 20, 0, 0);
+			}
+			&:first-of-type {
+				margin: 0;
+			}
+		}
+	}
 }
 
 .report {
-    padding: 50px 0 0;
     position: relative;
-    height: 530px;
-    overflow: hidden;
+	overflow: hidden;
+	@include breakpoint(pc) {
+		height: 530px;
+		padding: 50px 0 0;
+	}
+	@include breakpoint(sp) {
+		@include converter-sp(height, 550);
+		@include converter-sp(padding, 50, 0, 0);
+	}
 	&__text {
-		padding: 0 50px;
-		font-size: 24px;
-		margin-top: 30px;
+		@include breakpoint(pc) {
+			padding: 0 50px;
+			font-size: 24px;
+			margin-top: 30px;
+		}
+		@include breakpoint(sp) {
+			@include converter-sp(font-size, 32);
+			@include converter-sp(margin, 20, 0, 0);
+		}
 	}	
 	&__img {
 		position: absolute;
-		bottom: -90px;
 		display: block;
+		@include breakpoint(pc) {
+			bottom: -90px;
+		}
+		@include breakpoint(sp) {
+			bottom: 0;
+		}
 	}
 }
 
@@ -107,7 +149,6 @@
 		height: 34px;
 	}
 	&__text {
-		font-size: 44px;
 		font-weight: 900;
 		text-shadow:
             -1px -1px 0 #ffffff,  
@@ -119,24 +160,49 @@
 		line-height: 1.5;
 		color: #333333;
 		text-align: center;
+		@include breakpoint(pc) {
+			font-size: 62px;
+		}
+		@include breakpoint(sp) {
+			@include converter-sp(font-size, 55);
+		}
 	}
 	&__wrapper {
-		margin-top: 30px;
+		@include breakpoint(pc) {
+			margin-top: 30px;
+		}
+		@include breakpoint(sp) {
+			@include converter-sp(margin, 20, 0, 0);
+		}
 		& > img {
-			width: calc(33.3333% - 10px);
-			margin-right: 20px;
+			@include breakpoint(pc) {
+				width: calc(33.3333% - 10px);
+				margin-right: 20px;
+			}
 		}
 		& > div {
-			width: calc(33.3333% - 10px);
+			@include breakpoint(pc) {
+				width: calc(33.3333% - 10px);
+			}
 		}
 	}
 	&__item {
 		border-radius: 20px;
 		position: relative;
-		height: 166px;
-		padding: 10px 30px;
-		margin-right: 20px;
-		padding: 60px 30px 10px;
+		@include breakpoint(pc) {
+			height: 166px;
+			margin-right: 20px;
+			padding: 60px 30px 10px;
+		}
+		@include breakpoint(sp) {
+			@include converter-sp(padding, 20, 30, 20);
+			@include converter-sp(margin, 30, 0, 0);
+		}
+		&:last-of-type {
+			@include breakpoint(pc) {
+				margin: 0;
+			}
+		}
 		&::before {
 			content: '';
 			background-color: rgb(255, 255, 255);
@@ -149,45 +215,82 @@
 			height: 100%;
 			z-index: 0;
 		}
-		&:last-of-type {
-			margin: 0;
-		}
 		div {
 			text-align: center;
 			z-index: 1;
-			position: absolute;
-			top: 6px;
-			left: 50%;
-			transform: translateX(-50%);
+			@include breakpoint(pc) {
+				position: absolute;
+				top: 6px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			img {
+				@include breakpoint(sp) {
+					margin: 0 auto;
+				}
+			}
+		}
+		a {
+			@include breakpoint(sp) {
+				@include converter-sp(margin, 20, 0, 0);
+				display: flex;
+				align-items: center;
+				justify-self: center;
+			}
 		}
 	}
 }
 .reason {
 	margin: 0 auto;
-	padding: 70px 0 90px;
 	position: relative;
     background-size: contain;
     background-position: top center;
 	background-repeat: no-repeat;
 	background-image: url(../images/water-drop.png);
+	@include breakpoint(pc) {
+		padding: 70px 0 90px;
+	}
+	@include breakpoint(sp) {
+		@include converter-sp(padding, 70, 0);
+	}
 	&__text {
-		font-size: 44px;
 		color: #026bb7;
 		text-align: center;
 		font-weight: 700;
 		letter-spacing: 0.5px;
+		@include breakpoint(pc) {
+			font-size: 44px;
+		}
+		@include breakpoint(sp) {
+			@include converter-sp(font-size, 50);
+		}
 		span {
 			color: #333333;
 			&:first-of-type {
-				font-size: 80px;
+				@include breakpoint(pc) {
+					font-size: 80px;
+				}
+				@include breakpoint(sp) {
+					@include converter-sp(font-size, 80);
+				}
 			}
 			&:last-of-type {
-				font-size: 54px;
+				@include breakpoint(pc) {
+					font-size: 54px;
+				}
+				@include breakpoint(sp) {
+					@include converter-sp(font-size, 65);
+				}
 			}
 		}
 	}
 	&__items {
-		padding: 0 65px;
+		@include breakpoint(pc) {
+			padding: 0 65px;
+		}
+		@include breakpoint(sp) {
+			@include converter-sp(padding, 0, 20);
+		}
 	}
 	&__item {
 		position: relative;
@@ -195,14 +298,32 @@
 		overflow: hidden;
 		background-color: rgb(255,241,186);
 		background-color: linear-gradient(0deg, rgba(255,241,186,1) 0%, rgba(255,248,222,1) 100%);
-		background-size: auto;
 		background-repeat: no-repeat;
-		background-position: left;
-		margin-top: 25px;
+		@include breakpoint(pc) {
+			background-position: left;
+			background-size: auto;
+			margin-top: 25px;
+		}
+		@include breakpoint(sp) {
+			background-image: none !important;
+			@include converter-sp(margin, 20, 0, 0);
+		}
+		img {
+			@include breakpoint(sp) {
+				display: block;
+				width: 100%;
+				margin: 0 auto;
+			}
+		}
 	} 
 	&__details {
-		padding: 40px 70px 40px 45px;
 		flex: 1;
+		@include breakpoint(pc) {
+			padding: 40px 70px 40px 45px;
+		}
+		@include breakpoint(sp) {
+			@include converter-sp(padding, 20, 30);
+		}
 	}
 	&__img {
 		width: 360px;
@@ -212,15 +333,26 @@
 		background-position: center;
 	}
 	&__title {
-		font-size: 28px; 
 		letter-spacing: 0.7px;
 		font-weight: 700;
+		@include breakpoint(pc) {
+			font-size: 28px; 
+		}
+		@include breakpoint(sp) {
+			@include converter-sp(font-size, 36);
+		}
 	}
 	&__desc {
-		font-size: 15px;
-		margin-top: 25px;
 		line-height: 1.5;
 		letter-spacing: 0.5px;	
+		@include breakpoint(pc) {
+			font-size: 15px;
+			margin-top: 25px;
+		}
+		@include breakpoint(sp) {
+			@include converter-sp(font-size, 24);
+			@include converter-sp(margin, 10, 0, 0);
+		}
 	}
 }
 
@@ -237,12 +369,16 @@
 		background-position: center;
 		background-image: url(../images/splash.png);
 		top: -52px;
-		right: 308px;
 		width: 151px;
 		height: 62px;
+		@include breakpoint(pc) {
+			right: 308px;
+		}
+		@include breakpoint(sp) {
+			right: 0;
+		}
 	}
 	&__title {
-		font-size: 44px;
 		color: #026bb7;
 		font-weight: 700;
 		text-align: center;
@@ -254,18 +390,39 @@
 		filter: progid:DXImageTransform.Microsoft.Chroma(color='white') progid:DXImageTransform.Microsoft.Alpha(opacity=100) progid:DXImageTransform.Microsoft.dropshadow(color=#ffffff,offX=1,offY=1) progid:DXImageTransform.Microsoft.dropshadow(color=#ffffff,offX=-1,offY=1) progid:DXImageTransform.Microsoft.dropshadow(color=#ffffff,offX=1,offY=-1) progid:DXImageTransform.Microsoft.dropshadow(color=#ffffff,offX=-1,offY=-1);
 		zoom: 1;
 		line-height: 1.5;
+		@include breakpoint(pc) {
+			font-size: 44px;
+		}
+		@include breakpoint(sp) {
+			@include converter-sp(font-size, 44);
+		}
 		span {
 			color: #333333;
 			&:first-of-type {
-				font-size: 80px;
+				@include breakpoint(pc) {
+					font-size: 80px;
+				}
+				@include breakpoint(sp) {
+					@include converter-sp(font-size, 80);
+				}
 			}
 			&:last-of-type {
-				font-size: 54px;
+				@include breakpoint(pc) {
+					font-size: 54px;
+				}
+				@include breakpoint(sp) {
+					@include converter-sp(font-size, 54);
+				}
 			}
 		}
 	}
 	&__items {
-		margin-top: 40px;
+		@include breakpoint(pc) {
+			margin-top: 40px;
+		}
+		@include breakpoint(sp) {
+			@include converter-sp(margin, 40, 0, 0);
+		}
 	}
 	&__item {
 		position: relative;
@@ -281,6 +438,9 @@
 			transform: translateY(-50%);
 			width: 41px;
 			height: 59px;
+			@include breakpoint(sp) {
+				display: none;
+			}
 		}
 		&:last-of-type {
 			&::after {
@@ -289,20 +449,24 @@
 		}
 		img {
 			display: block;
+			@include breakpoint(sp) {
+				width: 80%;
+				margin: 2.66667vw auto 0;
+			}
 		}
 	}
 }
 
 .pros {
 	position: relative;
-	padding: 0 0 55px;
+	@include breakpoint(pc) {
+		padding: 0 0 55px;
+	}
+	@include breakpoint(sp) {
+		@include converter-sp(padding, 0, 0, 50);
+	}
 	&__title {
-		position: absolute;
-		top: 60px;
-		left: 50%;
-		transform: translateX(-50%);
 		color: #026bb7;
-		font-size: 44px;
 		width: inherit;
 		font-weight: 700;
 		text-align: center;
@@ -314,10 +478,25 @@
 		filter: progid:DXImageTransform.Microsoft.Chroma(color='white') progid:DXImageTransform.Microsoft.Alpha(opacity=100) progid:DXImageTransform.Microsoft.dropshadow(color=#ffffff,offX=1,offY=1) progid:DXImageTransform.Microsoft.dropshadow(color=#ffffff,offX=-1,offY=1) progid:DXImageTransform.Microsoft.dropshadow(color=#ffffff,offX=1,offY=-1) progid:DXImageTransform.Microsoft.dropshadow(color=#ffffff,offX=-1,offY=-1);
 		zoom: 1;
 		line-height: 1.5;
+		@include breakpoint(pc) {
+			transform: translateX(-50%);
+			position: absolute;
+			top: 60px;
+			left: 50%;
+			font-size: 44px;
+		}
+		@include breakpoint(sp) {
+			@include converter-sp(font-size, 44);
+		}
 		span {
 			color: #333333;
-			font-size: 58px;
 			font-weight: 800;
+			@include breakpoint(pc) {
+				font-size: 58px;
+			}
+			@include breakpoint(sp) {
+				@include converter-sp(font-size, 58);
+			}
 		}
 	}
 	&__img {
@@ -329,28 +508,51 @@
 		}
 	}
 	&__text {
-		font-size: 36px;
 		font-weight: 700;
 		text-align: center;
-		margin-top: 40px;
 		letter-spacing: 0.6px;
 		line-height: 1.5;
+		@include breakpoint(pc) {
+			font-size: 36px;
+			margin-top: 40px;
+		}
+		@include breakpoint(sp) {
+			@include converter-sp(font-size, 40);
+			@include converter-sp(margin, 40, 0, 0);
+		}
 	}
 	&__desc {
-		font-size: 18px;
 		text-align: center;
-		margin-top: 25px;
 		letter-spacing: 0.15px;
 		line-height: 1.5;
+		@include breakpoint(pc) {		
+			font-size: 18px;
+			margin-top: 25px;
+		}
+		@include breakpoint(sp) {
+			@include converter-sp(font-size, 22);
+			@include converter-sp(margin, 25, 0, 0);
+		}
 	}
 	&__table {
-		margin-top: 50px;
 		width: 100%;
+		@include breakpoint(pc) {
+			margin-top: 50px;
+		}
+		@include breakpoint(sp) {
+			@include converter-sp(margin, 40, 0, 0);
+		}
 		tr {
 			td {
-				padding: 30px;
-				font-size: 18px;
 				border: 2px solid #fff;
+				@include breakpoint(pc) {
+					padding: 30px;
+					font-size: 18px;
+				}
+				@include breakpoint(sp) {
+					@include converter-sp(padding, 20);
+					@include converter-sp(font-size, 24);
+				}
 				&:first-of-type {
 					color: #fff;
 					background-color: #026bb7;
@@ -368,10 +570,21 @@
 	background-repeat: no-repeat;
 	background-position: bottom center;
 	background-image: url(../images/footer__bg.png);
-	padding: 65px 0 35px;
+	@include breakpoint(pc) {
+		padding: 65px 0 35px;
+	}
+	@include breakpoint(sp) {
+		@include converter-sp(padding, 40, 0);
+	}
 	&__company {
-		margin-top: 140px;
-		font-size: 14px;
 		text-align: center;
+		@include breakpoint(pc) {
+			margin-top: 140px;
+			font-size: 14px;
+		}
+		@include breakpoint(sp) {
+			@include converter-sp(margin, 140, 0, 0);
+			@include converter-sp(font-size, 20);
+		}
 	}
 }

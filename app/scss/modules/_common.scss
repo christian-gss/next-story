@@ -84,3 +84,10 @@ br {
 		display: none;
 	}
 }
+
+img {
+	@include breakpoint(sp) {
+		max-width: 100%;
+		display: block;
+	}
+}

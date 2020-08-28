@@ -1,7 +1,25 @@
 .header {
     background-color: #fff;
-    padding: 6px 0;
+    @include breakpoint(pc) {
+        padding: 6px 0;
+    }
+    @include breakpoint(sp) {
+        @include converter-sp(padding, 20, 0);
+        border-bottom: 1px solid #ddd;
+    }
     p {
         font-size: 13px;
+    }
+    &__wrapper {
+        @include breakpoint(sp) {
+            display: block;
+            @include converter-sp(margin, 20, 0, 0);
+        }
+    }
+    &__contact {
+        @include breakpoint(sp) {
+            width: 80%;
+            @include converter-sp(margin, 10, 0, 0);
+        }
     }
 }
