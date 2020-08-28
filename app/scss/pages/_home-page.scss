@@ -226,6 +226,7 @@
 		div {
 			text-align: center;
 			z-index: 1;
+			position: relative;
 			@include breakpoint(pc) {
 				position: absolute;
 				top: 6px;
