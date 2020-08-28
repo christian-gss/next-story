@@ -1,0 +1,30 @@
+// colors
+$color-white: #fff;
+$color-black: #000;
+
+// Fonts
+$font-notosans: 'Noto Sans CJK JP', sans-serif;
+
+// Breakpoints
+
+// Max width
+$breakpoint-sp: 767px;
+// Min width
+$breakpoint-pc: 768px;
+// Min width
+$breakpoint-tablet-min: 768px;
+
+$breakpoint-tablet-max: 1024px;
+// Min width
+$breakpoint-pc-lg: 1600px;
+
+$breakpoint-xs: 480px;
+
+
+/*
+ * ----------- Optional breakpoints for ipad pro (Certain Situation only) -------------
+ * @added by: Ralph Nival
+ * Notes: Not necessary but in some case, it is useful
+*/
+$breakpoint-ipad-lg-min: 1024px;
+$breakpoint-ipad-lg-max: 1366px;

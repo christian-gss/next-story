@@ -1,0 +1,86 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+   overflow-x: hidden;
+   font-size: 62.5%;
+}
+
+body {
+	position: relative;
+	font-size: 16px;
+	padding: 0;
+	margin: 0;
+	background: $color-white;
+	font-family: Hiragino Sans, "ヒラギノ角ゴシック", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans", YuGothic, "游ゴシック", Meiryo, "メイリオ", Verdana, "ＭＳ Ｐゴシック", sans-serif;
+	color: $color-black;
+	-webkit-text-size-adjust: 100%;
+	@include breakpoint(tablet) {
+		overflow: hidden;
+	}
+}
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+	@include breakpoint(pc) {
+		max-width: 1216px;
+	}
+	@include breakpoint(md) {
+		@include converter-sp(padding, 0, 20);
+	}
+	@include breakpoint(tablet) {
+		@include converter-sp(padding, 0, 20);
+	}
+	@include breakpoint(sp) {
+		@include converter-sp(padding, 0, 20);
+	}
+}
+
+.clearfix::after { 
+   content: " ";
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+	line-height: 1.5;
+}
+
+a,button {
+	outline: none;
+}
+
+.pc {
+	@include breakpoint(pc) {
+		display: inherit;
+	}
+	@include breakpoint(sp) {
+		display: none;
+	}
+}
+
+.sp {
+	@include breakpoint(pc) {
+		display: none;
+	}
+	@include breakpoint(sp) {
+		display: inherit;
+	}
+}
+
+br {
+	@include breakpoint(tablet) {
+		display: none;
+	}
+}

@@ -1,0 +1,31 @@
+/**
+ *  calculate px to rem
+ */
+ @function calculateRem($size) {
+  $remSize: $size / 10px;
+  @return $remSize * 1rem;
+}
+
+@function calculateEm($size) {
+  @return ($size / 16px) * 1em; 
+}
+
+/* letter spacing formula
+  ===================
+    $arg1 - tracking
+  ===================
+*/
+@function calculate_ls($tracking) {
+  @return ($tracking / 1000) * 1em;
+}
+
+/* line height formula
+  ===================
+    $arg1 - font size
+    $arg2 - leading
+  ===================
+*/
+@function calculate_lh($size,$leading) {
+  @return $leading / $size;
+}
+
