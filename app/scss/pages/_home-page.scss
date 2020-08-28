@@ -185,6 +185,9 @@
 			}
 		}
 	}
+	&__items {
+		padding: 0 65px;
+	}
 	&__item {
 		position: relative;
 		border-radius: 20px;
@@ -217,5 +220,74 @@
 		margin-top: 25px;
 		line-height: 1.5;
 		letter-spacing: 0.5px;	
+	}
+}
+
+.problem {
+	position: relative;
+	padding: 50px 0;
+	background: rgb(239,250,254);
+	background: linear-gradient(0deg, rgba(239,250,254,1) 0%, rgba(176,230,249,1) 100%);
+	&::before {
+		content: '';
+		position: absolute;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-image: url(../images/splash.png);
+		top: -52px;
+		right: 308px;
+		width: 151px;
+		height: 62px;
+	}
+	&__title {
+		font-size: 44px;
+		color: #026bb7;
+		font-weight: 700;
+		text-align: center;
+		text-shadow:
+            -1px -1px 0 #ffffff,  
+            1px -1px 0 #ffffff,
+            -1px 1px 0 #ffffff,
+            1px 1px 0 #ffffff;
+		filter: progid:DXImageTransform.Microsoft.Chroma(color='white') progid:DXImageTransform.Microsoft.Alpha(opacity=100) progid:DXImageTransform.Microsoft.dropshadow(color=#ffffff,offX=1,offY=1) progid:DXImageTransform.Microsoft.dropshadow(color=#ffffff,offX=-1,offY=1) progid:DXImageTransform.Microsoft.dropshadow(color=#ffffff,offX=1,offY=-1) progid:DXImageTransform.Microsoft.dropshadow(color=#ffffff,offX=-1,offY=-1);
+		zoom: 1;
+		line-height: 1.5;
+		span {
+			color: #333333;
+			&:first-of-type {
+				font-size: 80px;
+			}
+			&:last-of-type {
+				font-size: 54px;
+			}
+		}
+	}
+	&__items {
+		margin-top: 40px;
+	}
+	&__item {
+		position: relative;
+		&::after {
+			content: '';
+			position: absolute;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-image: url(../images/arrow-right.png);
+			top: 60%;
+			right: -66px;
+			transform: translateY(-50%);
+			width: 41px;
+			height: 59px;
+		}
+		&:last-of-type {
+			&::after {
+				display: none;
+			}
+		}
+		img {
+			display: block;
+		}
 	}
 }
