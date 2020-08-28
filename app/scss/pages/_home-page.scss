@@ -327,7 +327,7 @@
 	&__details {
 		flex: 1;
 		@include breakpoint(pc) {
-			padding: 40px 70px 40px 45px;
+			padding: 40px 70px 40px 405px;
 		}
 		@include breakpoint(sp) {
 			@include converter-sp(padding, 20, 30);
