@@ -406,7 +406,8 @@
 			font-size: 44px;
 		}
 		@include breakpoint(sp) {
-			@include converter-sp(font-size, 36);
+			line-height: 1.2;
+			@include converter-sp(font-size, 44);
 		}
 		span {
 			color: #333333;
@@ -415,7 +416,7 @@
 					font-size: 80px;
 				}
 				@include breakpoint(sp) {
-					@include converter-sp(font-size, 50);
+					@include converter-sp(font-size, 80);
 				}
 			}
 			&:last-of-type {
@@ -423,7 +424,7 @@
 					font-size: 54px;
 				}
 				@include breakpoint(sp) {
-					@include converter-sp(font-size, 40);
+					@include converter-sp(font-size, 54);
 				}
 			}
 		}
