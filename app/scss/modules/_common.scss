@@ -14,7 +14,7 @@ body {
 	margin: 0;
 	background: $color-white;
 	font-family: Hiragino Sans, "ヒラギノ角ゴシック", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans", YuGothic, "游ゴシック", Meiryo, "メイリオ", Verdana, "ＭＳ Ｐゴシック", sans-serif;
-	color: $color-black;
+	color: #333;
 	-webkit-text-size-adjust: 100%;
 	@include breakpoint(tablet) {
 		overflow: hidden;
