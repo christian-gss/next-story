@@ -8,7 +8,12 @@
         border-bottom: 1px solid #ddd;
     }
     p {
-        font-size: 13px;
+        @include breakpoint(pc) {
+            font-size: 13px;
+        }
+        @include breakpoint(sp) {
+            @include converter-sp(font-size, 16);
+        }
     }
     &__wrapper {
         @include breakpoint(sp) {
