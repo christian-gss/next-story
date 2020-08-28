@@ -22,4 +22,9 @@
             @include converter-sp(margin, 10, 0, 0);
         }
     }
+    .logo {
+        @include breakpoint(tablet) {
+            width: 40%;
+        }
+    }
 }

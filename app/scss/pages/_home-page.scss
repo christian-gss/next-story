@@ -81,7 +81,9 @@
         }
 	}
 	&__buttons {
-		@include converter-sp(margin, 20, 0, 0);
+		@include breakpoint(sp) {
+			@include converter-sp(margin, 20, 0, 0);
+		}
 		a {
 			@include breakpoint(sp) {
 				@include converter-sp(margin, 20, 0, 0);
@@ -124,6 +126,9 @@
 		@include breakpoint(sp) {
 			bottom: 0;
 		}
+		@include breakpoint(tablet) {
+			width: 100%;
+		}
 	}
 }
 
@@ -162,6 +167,9 @@
 		text-align: center;
 		@include breakpoint(pc) {
 			font-size: 62px;
+		}
+		@include breakpoint(tablet) {
+			font-size: 52px;
 		}
 		@include breakpoint(sp) {
 			@include converter-sp(font-size, 55);
@@ -324,6 +332,9 @@
 		@include breakpoint(sp) {
 			@include converter-sp(padding, 20, 30);
 		}
+		@include breakpoint(tablet) {
+			padding: 40px 70px 40px 405px;
+		}
 	}
 	&__img {
 		width: 360px;
@@ -426,6 +437,19 @@
 	}
 	&__item {
 		position: relative;
+		@include breakpoint(tablet) {
+			margin-right: 10px;
+		}
+		&:last-of-type {
+			@include breakpoint(tablet) {
+				margin-right: 0;
+			}
+		}
+		img {
+			@include breakpoint(tablet) {
+				width: 100%;
+			}
+		}
 		&::after {
 			content: '';
 			position: absolute;
@@ -493,6 +517,9 @@
 			font-weight: 800;
 			@include breakpoint(pc) {
 				font-size: 58px;
+			}
+			@include breakpoint(tablet) {
+				font-size: 50px;
 			}
 			@include breakpoint(sp) {
 				@include converter-sp(font-size, 58);
