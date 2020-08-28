@@ -122,11 +122,11 @@
 	&__wrapper {
 		margin-top: 30px;
 		& > img {
-			width: 33.3333%;
+			width: calc(33.3333% - 10px);
 			margin-right: 20px;
 		}
 		& > div {
-			width: 33.3333%;
+			width: calc(33.3333% - 10px);
 		}
 	}
 	&__item {
@@ -135,6 +135,7 @@
 		height: 166px;
 		padding: 10px 30px;
 		margin-right: 20px;
+		padding: 60px 30px 10px;
 		&::before {
 			content: '';
 			background-color: rgb(255, 255, 255);
@@ -147,13 +148,74 @@
 			height: 100%;
 			z-index: 0;
 		}
+		&:last-of-type {
+			margin: 0;
+		}
 		div {
 			text-align: center;
 			z-index: 1;
-			position: relative;
+			position: absolute;
+			top: 6px;
+			left: 50%;
+			transform: translateX(-50%);
 		}
-		a {
-			margin-top: 5px;
+	}
+}
+.reason {
+	margin: 0 auto;
+	padding: 70px 0 90px;
+	position: relative;
+    background-size: contain;
+    background-position: top center;
+	background-repeat: no-repeat;
+	background-image: url(../images/water-drop.png);
+	&__text {
+		font-size: 44px;
+		color: #026bb7;
+		text-align: center;
+		font-weight: 700;
+		letter-spacing: 0.5px;
+		span {
+			color: #333333;
+			&:first-of-type {
+				font-size: 80px;
+			}
+			&:last-of-type {
+				font-size: 54px;
+			}
 		}
+	}
+	&__item {
+		position: relative;
+		border-radius: 20px;
+		overflow: hidden;
+		background-color: rgb(255,241,186);
+		background-color: linear-gradient(0deg, rgba(255,241,186,1) 0%, rgba(255,248,222,1) 100%);
+		background-size: auto;
+		background-repeat: no-repeat;
+		background-position: left;
+		margin-top: 25px;
+	} 
+	&__details {
+		padding: 40px 70px 40px 45px;
+		flex: 1;
+	}
+	&__img {
+		width: 360px;
+		height: 200px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	&__title {
+		font-size: 28px; 
+		letter-spacing: 0.7px;
+		font-weight: 700;
+	}
+	&__desc {
+		font-size: 15px;
+		margin-top: 25px;
+		line-height: 1.5;
+		letter-spacing: 0.5px;	
 	}
 }
