@@ -23,6 +23,16 @@
       @content;
     }
   }
+  @if $point == ipad {
+    @media only screen and (width: 768px) and (height: 1024px) {
+      @content;
+    }
+  }
+  @if $point == ipad-landscape {
+    @media only screen and (width: 1024px) and (height: 768px) {
+      @content;
+    }
+  }
   @if $point == tablet {
     @media screen and (min-width: $breakpoint-tablet-min) and (max-width: $breakpoint-tablet-max) {
       @content;

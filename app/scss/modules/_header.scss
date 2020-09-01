@@ -57,6 +57,9 @@
                 width: 100%;
                 @include converter-sp(font-size, 46);
             }
+            @include breakpoint(tablet) {
+                font-size: 36px;
+            }
             span {
                 @include breakpoint(pc) {
                     font-size: 16px;

@@ -66,6 +66,14 @@
 			background-size: cover;
 			@include converter-sp(height, 400);
 		}
+		@include breakpoint(ipad) {
+			height: 330px;
+			background-size: contain;
+		}
+		@include breakpoint(ipad-landscape) {
+			height: 420px;
+			background-size: cover;
+		}
 	}
     &__bg {
 		position: relative;
@@ -88,9 +96,24 @@
 			@include breakpoint(sp) {
 				@include converter-sp(margin, 20, 0, 0);
 			}
+			@include breakpoint(ipad) {
+				margin-right: 10px !important;
+			}
+			@include breakpoint(ipad-landscape) {
+				margin-right: 10px !important;
+			}
 			&:first-of-type {
 				margin: 0;
 			}
+			&:last-of-type {
+				@include breakpoint(ipad) {
+					margin: 0 !important;
+				}
+				@include breakpoint(ipad-landscape) {
+					margin: 0 !important;
+				}
+			}
+			
 		}
 	}
 }
@@ -102,9 +125,23 @@
 		height: 530px;
 		padding: 50px 0 0;
 	}
+	@include breakpoint(ipad) {
+		height: 460px;
+	}
+	@include breakpoint(ipad-landscape) {
+		height: 560px;
+	}
 	@include breakpoint(sp) {
 		@include converter-sp(height, 550);
 		@include converter-sp(padding, 50, 0, 0);
+	}
+	&__ribbon {
+		@include breakpoint(ipad) {
+			width: 100%;
+		}
+		@include breakpoint(ipad-landscape) {
+			width: 100%;
+		}
 	}
 	&__text {
 		@include breakpoint(pc) {
@@ -128,6 +165,12 @@
 		}
 		@include breakpoint(tablet) {
 			width: 100%;
+		}
+		@include breakpoint(ipad) {
+			bottom: -60px;
+		}
+		@include breakpoint(ipad-landscape) {
+			bottom: -60px;
 		}
 	}
 }
@@ -153,6 +196,14 @@
 		width: 108px;
 		height: 34px;
 	}
+	img {
+		@include breakpoint(ipad) {
+			width: 200px;
+		}
+		@include breakpoint(ipad-landscape) {
+			width: 200px;
+		}
+	}
 	&__text {
 		font-weight: 900;
 		text-shadow:
@@ -171,8 +222,22 @@
 		@include breakpoint(tablet) {
 			font-size: 52px;
 		}
+		@include breakpoint(ipad) {
+			font-size: 46px;
+		}
+		@include breakpoint(ipad-landscape) {
+			font-size: 46px;
+		}
 		@include breakpoint(sp) {
 			@include converter-sp(font-size, 46);
+		}
+		br {
+			@include breakpoint(ipad) {
+				display: none;
+			}
+			@include breakpoint(ipad-landscape) {
+				display: none;
+			}
 		}
 	}
 	&__wrapper {
@@ -234,6 +299,12 @@
 				transform: translateX(-50%);
 			}
 			img {
+				@include breakpoint(ipad) {
+					width: 200px;
+				}
+				@include breakpoint(ipad-landscape) {
+					width: 200px;
+				}
 				@include breakpoint(sp) {
 					margin: 0 auto;
 				}
@@ -271,6 +342,12 @@
 				@include breakpoint(tablet){
 					font-size: 28px;
 				}
+				@include breakpoint(ipad){
+					font-size: 22px;
+				}
+				@include breakpoint(ipad-landscape){
+					font-size: 22px;
+				}
 				@include breakpoint(sp){
 					text-align: center;
 					position: relative;
@@ -299,6 +376,12 @@
 					position: relative;
 					@include converter-sp(margin, 10, 0, 0);
 					@include converter-sp(font-size, 24);
+				}
+				@include breakpoint(ipad) {
+					top: 100px;
+				}
+				@include breakpoint(ipad-landscape) {
+					top: 100px;
 				}
 			}
 		}
@@ -366,6 +449,12 @@
 		@include breakpoint(pc) {
 			padding: 0 65px;
 		}
+		@include breakpoint(ipad) {
+			padding: 0 20px;
+		}
+		@include breakpoint(ipad-landscape) {
+			padding: 0 20px;
+		}
 		@include breakpoint(sp) {
 			@include converter-sp(padding, 0, 20);
 		}
@@ -386,7 +475,19 @@
 			background-image: none !important;
 			@include converter-sp(margin, 20, 0, 0);
 		}
+		@include breakpoint(ipad) {
+			background-image: none !important;
+		}
+		@include breakpoint(ipad-landscape) {
+			background-image: none !important;
+		}
 		img {
+			@include breakpoint(ipad) {
+				display: block !important;
+			}
+			@include breakpoint(ipad-landscape) {
+				display: block !important;
+			}
 			@include breakpoint(sp) {
 				display: block;
 				width: 100%;
@@ -398,6 +499,12 @@
 		flex: 1;
 		@include breakpoint(pc) {
 			padding: 40px 70px 40px 405px;
+		}
+		@include breakpoint(ipad) {
+			padding: 10px !important;
+		}
+		@include breakpoint(ipad-landscape) {
+			padding: 10px !important;
 		}
 		@include breakpoint(sp) {
 			@include converter-sp(padding, 20, 30);
@@ -418,6 +525,12 @@
 		font-weight: 700;
 		@include breakpoint(pc) {
 			font-size: 28px; 
+		}
+		@include breakpoint(ipad) {
+			font-size: 21px;
+		}
+		@include breakpoint(ipad-landscape) {
+			font-size: 21px;
 		}
 		@include breakpoint(sp) {
 			@include converter-sp(font-size, 36);
@@ -495,6 +608,14 @@
 				@include breakpoint(sp) {
 					@include converter-sp(font-size, 54);
 				}
+			}
+		}
+		br {
+			@include breakpoint(ipad) {
+				display: block;
+			}
+			@include breakpoint(ipad-landscape) {
+				display: block;
 			}
 		}
 	}
@@ -580,6 +701,12 @@
 			left: 50%;
 			font-size: 44px;
 		}
+		@include breakpoint(ipad) {
+			font-size: 21px;
+		}
+		@include breakpoint(ipad-landscape) {
+			font-size: 21px;
+		}
 		@include breakpoint(sp) {
 			@include converter-sp(font-size, 44);
 		}
@@ -613,6 +740,12 @@
 		@include breakpoint(pc) {
 			font-size: 36px;
 			margin-top: 40px;
+		}
+		@include breakpoint(ipad) {
+			font-size: 30px;
+		}
+		@include breakpoint(ipad-landscape) {
+			font-size: 30px;
 		}
 		@include breakpoint(sp) {
 			@include converter-sp(font-size, 40);
