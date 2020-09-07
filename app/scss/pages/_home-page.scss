@@ -127,10 +127,10 @@
 		padding: 50px 0 0;
 	}
 	@include breakpoint(ipad) {
-		height: 460px;
+		height: 490px;
 	}
 	@include breakpoint(ipad-landscape) {
-		height: 560px;
+		height: 530px;
 	}
 	@include breakpoint(sp) {
 		@include converter-sp(height, 480);
@@ -186,10 +186,10 @@
 			width: 100%;
 		}
 		@include breakpoint(ipad) {
-			bottom: -60px;
+			bottom: -40px;
 		}
 		@include breakpoint(ipad-landscape) {
-			bottom: -60px;
+			bottom: -40px;
 		}
 	}
 }
