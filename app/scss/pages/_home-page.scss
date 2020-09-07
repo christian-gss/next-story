@@ -94,6 +94,7 @@
 		}
 		a {
 			@include breakpoint(sp) {
+				display: flex;
 				@include converter-sp(margin, 20, 0, 0);
 			}
 			@include breakpoint(ipad) {
@@ -132,8 +133,16 @@
 		height: 560px;
 	}
 	@include breakpoint(sp) {
-		@include converter-sp(height, 550);
+		@include converter-sp(height, 480);
 		@include converter-sp(padding, 50, 0, 0);
+	}
+	br {
+		@include breakpoint(ipad) {
+			display: block;
+		}
+		@include breakpoint(ipad-landscape) {
+			display: block;
+		}
 	}
 	&__ribbon {
 		@include breakpoint(ipad) {
@@ -146,7 +155,7 @@
 	&__text {
 		font-weight: 600;
 		@include breakpoint(pc) {
-			padding-left: 25px;
+			padding-left: 302px;
 			font-size: 26px;
 			margin-top: 30px;
 		}
@@ -154,12 +163,21 @@
 			@include converter-sp(font-size, 28);
 			@include converter-sp(margin, 20, 0, 0);
 		}
+		@include breakpoint(ipad) {
+			padding: 0;
+		}
+		@include breakpoint(ipad-landscape) {
+			padding: 0;
+		}
 	}	
 	&__img {
 		position: absolute;
 		display: block;
 		@include breakpoint(pc) {
-			bottom: -100px;
+			bottom: -60px;
+			max-width: 100%;
+			left: 50%;
+			transform: translateX(-50%);
 		}
 		@include breakpoint(sp) {
 			bottom: -13px;
