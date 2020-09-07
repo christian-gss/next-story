@@ -144,9 +144,10 @@
 		}
 	}
 	&__text {
+		font-weight: 600;
 		@include breakpoint(pc) {
-			padding: 0 50px;
-			font-size: 24px;
+			padding-left: 25px;
+			font-size: 26px;
 			margin-top: 30px;
 		}
 		@include breakpoint(sp) {
@@ -158,10 +159,10 @@
 		position: absolute;
 		display: block;
 		@include breakpoint(pc) {
-			bottom: -90px;
+			bottom: -100px;
 		}
 		@include breakpoint(sp) {
-			bottom: 0;
+			bottom: -13px;
 		}
 		@include breakpoint(tablet) {
 			width: 100%;
@@ -447,7 +448,7 @@
 	}
 	&__items {
 		@include breakpoint(pc) {
-			padding: 0 65px;
+			padding: 0 58px;
 		}
 		@include breakpoint(ipad) {
 			padding: 0 20px;
@@ -498,7 +499,7 @@
 	&__details {
 		flex: 1;
 		@include breakpoint(pc) {
-			padding: 40px 70px 40px 405px;
+			padding: 40px 40px 40px 395px;
 		}
 		@include breakpoint(ipad) {
 			padding: 10px !important;
@@ -521,10 +522,9 @@
 		background-position: center;
 	}
 	&__title {
-		letter-spacing: 0.7px;
 		font-weight: 700;
 		@include breakpoint(pc) {
-			font-size: 28px; 
+			font-size: 29px; 
 		}
 		@include breakpoint(ipad) {
 			font-size: 21px;
@@ -534,6 +534,17 @@
 		}
 		@include breakpoint(sp) {
 			@include converter-sp(font-size, 36);
+		}
+		small {
+			@include breakpoint(pc) {
+				font-size: 18px;
+			}
+			@include breakpoint(ipad) {
+				font-size: 18px;
+			}
+			@include breakpoint(ipad-landscape) {
+				font-size: 18px;
+			}
 		}
 	}
 	&__desc {
@@ -650,7 +661,7 @@
 			background-position: center;
 			background-image: url(../images/arrow-right.png);
 			top: 60%;
-			right: -66px;
+			right: -59px;
 			transform: translateY(-50%);
 			width: 41px;
 			height: 59px;
